@@ -13,3 +13,10 @@ cmake --build .
 ```
 opt -load-pass-plugin build/lib/libPass.so -passes=my_pass -S foo.ll
 ```
+
+## Generate CFG
+```
+opt -passes='dot-cfg' -S -disable-output test/nnLoop.ll
+dot -Tpng -o .foo.dot test/foo.png
+rm .foo.dot
+```
